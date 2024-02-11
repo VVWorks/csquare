@@ -1,1 +1,11 @@
 CSQUARE is an interpreted programming language that can also be translated to C code and then compiled.
+
+A CSQUARE source file will be named a csqr file.
+
+Description of files:
+	/src/csuare.c is the driver code of the interpretor
+	/src/translator is the driver code of the translator
+
+Description of executables
+	/bin/translator will take as argument a csqr and will create a C project out of it
+	/bin/csqare will take as argument a csqr file and will interpret it
