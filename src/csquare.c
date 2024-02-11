@@ -63,6 +63,11 @@ int main(int argc, char *argv[]) {
 		}
 
 		// if not flag, argument must be source file name
+		if (task.source_code) {
+			printf("Please provide only one source file, exiting!\n");
+			return TOO_MANY_ARGS;
+		}
+		
 		task.source_code = argv[i];
 	}
 

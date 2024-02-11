@@ -1,3 +1,5 @@
 tocken
 *.csqr
-bin/
+bin/csquare
+bin/translator
+bin/obj/*

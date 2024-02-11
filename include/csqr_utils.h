@@ -6,7 +6,8 @@ typedef enum {
 	NO_ARGS_EXIT = -1,
 	NO_FILE_EXIT = -2,
 	UNKNOUN_FLAG_EXIT = -3,
-	NULL_REF_EXIT = -4
+	NULL_REF_EXIT = -4,
+	TOO_MANY_ARGS = -5
 } CSQR_EXIT;
 
 typedef enum {
