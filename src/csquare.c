@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 					set_flag_on(&(task.flags), FLAG_VERBOSE);
 				break;
 				default:
-					printf("Unknoun flag %s, exiting", argv[i]);
+					printf("Unknoun flag %s, exiting\n", argv[i]);
 					return UNKNOUN_FLAG_EXIT;
 				break;
 			}
