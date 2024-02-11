@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 	for (int i = 1; i < argc; i++) {
 		if (argv[i][0] == '-') {
 			if (strlen(argv[i]) > 2) {
-				printf("Unknoun flag %s, exiting", argv[i]);
+				printf("Unknoun flag %s, exiting\n", argv[i]);
 				return UNKNOUN_FLAG_EXIT;
 			}
 
