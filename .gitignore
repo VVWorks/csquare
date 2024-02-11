@@ -2,4 +2,4 @@ tocken
 *.csqr
 bin/csquare
 bin/translator
-bin/obj/*
+bin/obj/*.o
