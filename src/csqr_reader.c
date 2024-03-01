@@ -369,9 +369,9 @@ COMP_ERROR create_program(FILE* file, program_t* out) {
 
 	// createing objects and expresion trees
 
-	int scope_id = 0;
-	int space_count = 0;
-	int l = 0, r = 0;
+	//int scope_id = 0;
+	//int space_count = 0;
+	//int l = 0, r = 0;
 	for (int i = 0; i < curr_line; i++) {
 		int spaces = 0;
 		char* this_line = lines[i];
@@ -383,7 +383,7 @@ COMP_ERROR create_program(FILE* file, program_t* out) {
 		}
 	}
 
-	return OK;
+	return SUCCES;
 }
 
 COMP_ERROR create_expresion_tree(program_t* program, char* expresion, unsigned int l, unsigned int r, expresion_t* out) {
@@ -432,9 +432,9 @@ COMP_ERROR create_expresion_tree(program_t* program, char* expresion, unsigned i
 
 	// transform each element into an expresion node
 
-	return OK;
+	return SUCCES;
 }
 
 COMP_ERROR delete_expresion_tree(expresion_t* expresion) {
-	return OK;
+	return SUCCES;
 }

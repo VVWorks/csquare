@@ -15,7 +15,7 @@ reader:
 	gcc $(CFLAGS) -o $(OBJ)reader.o $(SRC)csqr_reader.c -c
 
 utils:
-	gcc $(CFLAGS) -o $(OBJ)utils.o $(SRC)csqr_utils.c -c
+	gcc $(CFLAGS) -o $(OBJ)csqr_utils.o $(SRC)csqr_utils.c -c
 
 data_struct:
 	gcc $(CFLAGS) -o $(OBJ)avl.o $(DATA_STRUCT_SRC)avl.c -c
@@ -25,11 +25,11 @@ data_struct:
 	gcc $(CFLAGS) -o $(OBJ)utils.o $(DATA_STRUCT_SRC)utils.c -c
 	gcc $(CFLAGS) -o $(OBJ)vector.o $(DATA_STRUCT_SRC)vector.c -c
 
-build_translator: reader
-	gcc $(CFLAGS) -o $(BIN)translator $(SRC)translator.c $(OBJ)reader.o
+build_translator: reader utils data_struct
+	gcc $(CFLAGS) -o $(BIN)translator $(SRC)translator.c $(OBJ)reader.o $(OBJ)csqr_utils.o $(OBJ)stack.o
 
-build_csquare: reader utils
-	gcc $(CFLAGS) -o $(BIN)csquare $(SRC)csquare.c $(OBJ)reader.o $(OBJ)utils.o
+build_csquare: reader utils data_struct
+	gcc $(CFLAGS) -o $(BIN)csquare $(SRC)csquare.c $(OBJ)reader.o $(OBJ)csqr_utils.o $(OBJ)stack.o
 
 run_translator: build_translator
 	$(BIN)translator $(ARGS)

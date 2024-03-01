@@ -2,6 +2,7 @@
 #define CSQR_READER
 
 #include "csqr_utils.h"
+#include "../c_libs/include/stack.h"
 
 typedef struct csqr_obj_s csqr_obj_t;
 typedef struct csqr_obj_type_t csqr_obj_type_t;

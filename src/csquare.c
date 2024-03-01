@@ -36,7 +36,7 @@ CSQR_EXIT solve_task(csqr_task_t* task) {
 
 	if (comp) {
 		printf("Error while compiling program. error code = <%d>\n\n", comp);
-		return COMPILATION_ERROR;
+		return COMPILATION_ERROR_EXIT;
 	}
 
 	fclose(src);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
 		// if not flag, argument must be source file name
 		if (task.source_code) {
 			printf("Please provide only one source file, exiting!\n");
-			return TOO_MANY_ARGS;
+			return TOO_MANY_ARGS_EXIT;
 		}
 		
 		task.source_code = argv[i];
