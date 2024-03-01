@@ -11,7 +11,7 @@ CSQR_EXIT solve_task(csqr_task_t* task) {
 		return NULL_REF_EXIT;
 
 	if (!task->source_code) {
-		printf("Error: No source file given\n");
+		printf("Error: No source file given\n\n");
 		return NO_ARGS_EXIT;
 	}
 
@@ -21,15 +21,31 @@ CSQR_EXIT solve_task(csqr_task_t* task) {
 
 	FILE* src = fopen(task->source_code, "r");
 	if (!src) {
-		printf("Error: Could not open file %s\n", task->source_code);
+		printf("Error: Could not open file %s\n\n", task->source_code);
 		return NO_FILE_EXIT;
 	}
 
 	if (is_flag_on(task->flags, FLAG_VERBOSE)) {
-		printf("Preprocessing sourcefile: %s\n", task->source_code);
+		printf("Sourcefile opened\n\n");
+
+		printf("Preprocessing sourcefile: %s\n\n", task->source_code);
+	}
+
+	program_t* program = NULL;
+	COMP_ERROR comp = create_program(src, program);
+
+	if (comp) {
+		printf("Error while compiling program. error code = <%d>\n\n", comp);
+		return COMPILATION_ERROR;
 	}
 
 	fclose(src);
+
+	if (is_flag_on(task->flags, FLAG_VERBOSE)) {
+		printf("Program succesfuly proccessed with exit code = <%d>\n\n", comp);
+
+		printf("Executing the program\n\n");
+	}
 
 	return SUCCES_EXIT;
 }

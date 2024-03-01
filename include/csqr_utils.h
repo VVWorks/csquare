@@ -1,14 +1,29 @@
 #ifndef CSQR_UTILS
 #define CSQR_UTILS
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#define OPERATOR_COUNT 1
+#define DEBUG
+#define LINUX
+
 typedef enum {
 	SUCCES_EXIT = 0,
 	NO_ARGS_EXIT = -1,
 	NO_FILE_EXIT = -2,
 	UNKNOUN_FLAG_EXIT = -3,
 	NULL_REF_EXIT = -4,
-	TOO_MANY_ARGS = -5
+	TOO_MANY_ARGS = -5,
+	COMPILATION_ERROR = -6
 } CSQR_EXIT;
+
+typedef enum {
+	OK = 0,
+	INTERNAL_ERROR = -1,
+	MISSING_PARENTHESES = -2
+} COMP_ERROR;
 
 typedef enum {
 	FLAG_VERBOSE = 0 // -v
